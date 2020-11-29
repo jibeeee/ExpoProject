@@ -19,5 +19,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-// something added here but not commited
