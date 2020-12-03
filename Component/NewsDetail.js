@@ -4,8 +4,6 @@ import {StyleSheet, Text, SafeAreaView, ScrollView, View, Image, Dimensions} fro
 const { width, height } = Dimensions.get('window')
 
 const NewsDetail = ({item}) => {
-    console.log('satunya')
-    console.log(item.poster)
     return(
         <SafeAreaView style={styles.container}>
             <ScrollView> 
@@ -27,7 +25,7 @@ const styles = StyleSheet.create({
         padding: 15
     },
     title: {
-        color: 'black',
+        color: '#ffff',
         fontSize: 25,
         fontWeight: 'bold',
         marginTop: 10,
@@ -37,7 +35,7 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 16,
-        color: 'black',
+        color: '#ffff',
         textAlign: 'auto', 
         marginTop: 10,
         marginRight: 10,

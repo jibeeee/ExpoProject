@@ -4,14 +4,14 @@ import { View, StyleSheet, Text, Image, Dimensions, TouchableOpacity } from 'rea
 
 const { width, height } = Dimensions.get('window')
 
+
 const NewsCard = ({item, navigation}) => {
-    console.log(item.poster)
     return (
         <TouchableOpacity
         style={styles.cardView} 
         onPress={() => {navigation.navigate('Detail News', {
             link: item.link
-        })}}>
+        })}}> 
                     <Text style={styles.title}>{item.judul}</Text>
                     <Text style={styles.type}>{item.tipe}</Text>
                     <Image style={styles.image} source={{uri: item.poster.replace(/\??w=.*/sg,"?w=650")}}/>
@@ -22,7 +22,7 @@ const NewsCard = ({item, navigation}) => {
 
 const styles = StyleSheet.create({
     cardView: {
-        backgroundColor: 'white',
+        backgroundColor: '#313236',
         margin: width * 0.03,
         borderRadius: width * 0.05,
         shadowColor: '#000',
@@ -34,18 +34,19 @@ const styles = StyleSheet.create({
     title: {
         marginHorizontal: width * 0.05,
         marginVertical: width * 0.03,
-        color: 'black',
-        fontSize: 20,
+        color: '#ffffff',
+        fontSize: 23,
         fontWeight: 'bold'
 
     },
     time: {
         marginVertical: width * 0.05,
         marginHorizontal: width * 0.05,
-        color: 'gray',
+        color: '#adaeb3',
         fontSize: 13
     },
     image: {
+        borderRadius: width * 0.03,
         height: height/3,
         marginLeft: width * 0.05,
         marginRight: width * 0.05,
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
         marginBottom: width * 0.0,
         marginHorizontal: width * 0.05,
         fontSize: 18,
-        color: 'gray'
+        color: '#90b3ed'
 
     }
 })
