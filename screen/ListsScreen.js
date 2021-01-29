@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
         shadowOffset: { width:0.5, height: 0.5 },
         shadowOpacity: 0.5,
         shadowRadius: 3
-
     },
     title: {
         marginHorizontal: width * 0.05,
@@ -20,13 +19,12 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         fontSize: 23,
         fontWeight: 'bold'
-
     },
     time: {
         marginVertical: width * 0.05,
         marginHorizontal: width * 0.05,
         color: '#adaeb3',
-        fontSize: 13
+        fontSize: 14
     },
     image: {
         borderRadius: width * 0.03,
@@ -34,32 +32,32 @@ const styles = StyleSheet.create({
         marginLeft: width * 0.05,
         marginRight: width * 0.05,
         marginVertical: height * 0.02
-
     },
     type: {
         marginBottom: width * 0.0,
         marginHorizontal: width * 0.05,
         fontSize: 18,
-        color: '#90b3ed'
-
+        color: '#90b3ed',
+        textAlign: 'right',
+        right: 2
     }
 })
 
-const ListsScreen = ({navigation}) => {
-  const [isLoading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch('https://www.news.developeridn.com/')
-      .then((response) => response.json())
-      .then((json) => setData(json.data)) 
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }, []);
-  
+  const ListsScreen = ({navigation}) => {
+
+    const [isLoading, setLoading] = useState(true);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      fetch('https://www.news.developeridn.com/')
+        .then((response) => response.json())
+        .then((json) => setData(json.data)) 
+        .catch((error) => console.error(error))
+        .finally(() => setLoading(false));
+    }, []);
   return (
     <SafeAreaView>
-      {isLoading ? <ActivityIndicator/> : (
         <FlatList
           data={data}
           keyExtractor={(item , index) => index}
@@ -74,7 +72,6 @@ const ListsScreen = ({navigation}) => {
                 </TouchableOpacity>
               )}
         />
-      )}
     </SafeAreaView>
   );
 };

@@ -52,7 +52,7 @@ const DetailsScreen = ({route}) => {
   }, []);
   
   return (
-    <View style={{backgroundColor:'#202125'}}>
+    <View >
       {isLoading ? <ActivityIndicator/> : (
         <FlatList
           data={data}

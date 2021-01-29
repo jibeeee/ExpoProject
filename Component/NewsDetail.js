@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, SafeAreaView, ScrollView, View, Image, Dimensions} from 'react-native';
 
+
 const { width, height } = Dimensions.get('window')
 
 const NewsDetail = ({item}) => {
